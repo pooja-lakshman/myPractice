@@ -1,0 +1,25 @@
+package javaString;
+
+import java.util.Scanner;
+
+public class ReverseString {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String input = "pooja";
+		System.out.println("Input : " + input);
+		System.out.println("Output : " + revStr(input));
+
+	}
+
+	public static String revStr(String input) {
+		char ch[] = input.toCharArray();
+		char temp;
+		for (int i = 0, j = ch.length - 1; i < ch.length / 2; i++, j--) {
+			temp = ch[i];
+			ch[i] = ch[j];
+			ch[j] = temp;
+		}
+		return new String(ch);
+	}
+
+}
